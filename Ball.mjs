@@ -4,6 +4,7 @@ export class Ball {
   radius;
   speedY;
   speedX;
+  direction;
 
   constructor(x, y, radius) {
     this.x = x;
@@ -11,6 +12,12 @@ export class Ball {
     this.radius = radius;
     this.speedX = 3;
     this.speedY = 0;
+    this.direction = 1;
+  }
+
+  move() {
+    this.x += this.speedX * this.direction;
+    this.y += this.speedY * this.direction;
   }
 
   getX() {
