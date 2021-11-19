@@ -15,6 +15,14 @@ export class Board {
     this.ball = null;
   }
 
+  getPlaying() {
+    return this.playing;
+  }
+
+  setPlaying(playing) {
+    this.playing = playing;
+  }
+
   getBars() {
     return this.bars;
   }
