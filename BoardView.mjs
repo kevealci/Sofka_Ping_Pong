@@ -12,8 +12,11 @@ export class BoardView {
   }
 
   play() {
-    this.clean();
-    this.graficar();
+    if (this.board.getPlaying()) {
+      this.clean();
+      this.graficar();
+      this.board.getBall().move();
+    }
   }
 
   graficar() {
