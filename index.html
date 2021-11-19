@@ -6,14 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ping Pong</title>
     <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       canvas {
         border: solid;
+        width: 1000px;
+      }
+      p {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <h1>Ping Pong</h1>
+    <p>Se puede Iniciar / Pausar con la barra espaciadora</p>
     <canvas id="canvas"></canvas>
+    <p>
+      La pelota solo rebota contra las barras, me quise centrar en transpilar el código del video
+      hacia una sintaxis mas actual de Paradigma Orientado a Objetos con las keyWords class entre
+      otras, donde se puede apreciar que es mas legible, modular y fácil de asimilar el código.
+    </p>
+    <p>
+      Todavía se puede optimizar mas pero al realizar el proyecto se pudo hacer uso de los conceptos
+      fundamentales que esa es la finalidad del curso.
+    </p>
+    <p>Hecho con 💛 por Kevealci</p>
     <script src="main.js" type="module"></script>
   </body>
 </html>
