@@ -14,19 +14,27 @@ board.addBar(bar1, bar2);
 board.addBall(ball);
 let canvas = document.getElementById('canvas');
 let board_view = new BoardView(canvas, board);
+board_view.graficar();
 
 window.requestAnimationFrame(controller);
 
 document.addEventListener('keydown', function (ev) {
-  ev.preventDefault();
-  if (ev.key === 'ArrowUp') {
+  //console.log(ev);
+  if (ev.code === 'ArrowUp') {
+    ev.preventDefault();
     bar2.up();
-  } else if (ev.key === 'ArrowDown') {
+  } else if (ev.code === 'ArrowDown') {
+    ev.preventDefault();
     bar2.down();
-  } else if (ev.key === 'w') {
+  } else if (ev.code === 'KeyW') {
+    ev.preventDefault();
     bar1.up();
-  } else if (ev.key === 's') {
+  } else if (ev.code === 'KeyS') {
+    ev.preventDefault();
     bar1.down();
+  } else if (ev.code === 'Space') {
+    ev.preventDefault();
+    board.setPlaying(!board.getPlaying());
   }
 });
 
