@@ -1,11 +1,12 @@
 export class Board {
+  // Declaracion de los atributos
   width;
   height;
   playing;
   game_over;
   bars;
   ball;
-
+  // Inicializacion de los atributos
   constructor(width, height) {
     this.width = width;
     this.height = height;
@@ -14,7 +15,7 @@ export class Board {
     this.bars = [];
     this.ball = null;
   }
-
+  // Getters y setters
   getPlaying() {
     return this.playing;
   }
@@ -30,7 +31,7 @@ export class Board {
   getBall() {
     return this.ball;
   }
-
+  // Funciones para agregar las barras y la pelota al board
   addBar(...bar) {
     this.bars.push(bar);
   }

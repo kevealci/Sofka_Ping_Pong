@@ -1,8 +1,9 @@
 export class BoardView {
+  // Declaracion de los atributos
   canvas;
   board;
   ctx;
-
+  // Inicializacion de los atributos
   constructor(canvas, board) {
     this.canvas = canvas;
     this.canvas.width = board.width;
@@ -10,7 +11,7 @@ export class BoardView {
     this.board = board;
     this.ctx = canvas.getContext('2d');
   }
-
+  // Funcion que detecta la colision entre la pelota y las barras
   checkCollisions() {
     let [bars] = this.board.getBars();
     for (let i = 0; i < bars.length; i++) {
@@ -20,7 +21,7 @@ export class BoardView {
       }
     }
   }
-
+  // Funcion que retorna si un elementoA golpea a un elementoB
   hit(elementoA, elementoB) {
     // Revisa si a colisiona con b
     let hit = false;
@@ -65,7 +66,7 @@ export class BoardView {
     }
     return hit;
   }
-
+  // Funcionalidades del juego
   play() {
     if (this.board.getPlaying()) {
       this.clean();
@@ -74,7 +75,7 @@ export class BoardView {
       this.board.getBall().move();
     }
   }
-
+  // Grafica los elementos del board
   graficar() {
     let [elementos] = this.board.getBars();
     for (let i = 0; i < elementos.length; i++) {
@@ -93,7 +94,7 @@ export class BoardView {
     this.ctx.fill();
     this.ctx.closePath();
   }
-
+  // Resetea los graficos al momento que se detecta un cambio en las barras
   clean() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }

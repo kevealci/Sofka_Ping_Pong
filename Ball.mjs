@@ -1,4 +1,5 @@
 export class Ball {
+  // Declaracion de los atributos
   x;
   y;
   radius;
@@ -9,7 +10,7 @@ export class Ball {
   maxBounceAngle;
   speed;
   width;
-
+  // Inicializacion de los atributos
   constructor(x, y, radius, width) {
     this.x = x;
     this.y = y;
@@ -22,7 +23,7 @@ export class Ball {
     this.speed = 3;
     this.width = width;
   }
-
+  // Funcion que realiza el efecto de rebote de la pelota y setea la direccion al golpear.
   collision(bar) {
     let relativeIntersectY = bar.getY() + bar.getHeight() / 2 - this.y;
     let normalizedIntersectY = relativeIntersectY / (bar.getHeight() / 2);
@@ -35,12 +36,12 @@ export class Ball {
     if (this.x > this.width / 2) this.direction = -1;
     else this.direction = 1;
   }
-
+  // Funcion que actualiza el valor de la velocidad que tiene la pelota
   move() {
     this.x += this.speedX * this.direction;
     this.y += this.speedY * this.direction;
   }
-
+  // Getters y setters
   getX() {
     return this.x;
   }
