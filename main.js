@@ -9,7 +9,7 @@ const height = 400;
 const board = new Board(width, height);
 const bar1 = new Bar(width * 0.05, height * 0.35, 30, 100);
 const bar2 = new Bar(width * 0.92, height * 0.35, 30, 100);
-const ball = new Ball(width * 0.5, height * 0.5, 10);
+const ball = new Ball(width * 0.5, height * 0.5, 10, width);
 board.addBar(bar1, bar2);
 board.addBall(ball);
 let canvas = document.getElementById('canvas');
@@ -19,7 +19,6 @@ board_view.graficar();
 window.requestAnimationFrame(controller);
 
 document.addEventListener('keydown', function (ev) {
-  //console.log(ev);
   if (ev.code === 'ArrowUp') {
     ev.preventDefault();
     bar2.up();
