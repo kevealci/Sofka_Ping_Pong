@@ -11,6 +11,11 @@ export class BoardView {
     this.ctx = canvas.getContext('2d');
   }
 
+  play() {
+    this.clean();
+    this.graficar();
+  }
+
   graficar() {
     let [elementos] = this.board.getBars();
     //console.log(elementos);
@@ -24,5 +29,15 @@ export class BoardView {
         elemento.getHeight()
       );
     }
+
+    let ball = this.board.getBall();
+    this.ctx.beginPath();
+    this.ctx.arc(ball.getX(), ball.getY(), ball.getRadius(), 0, 7);
+    this.ctx.fill();
+    this.ctx.closePath();
+  }
+
+  clean() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 }

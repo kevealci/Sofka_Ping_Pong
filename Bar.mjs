@@ -3,12 +3,14 @@ export class Bar {
   y;
   width;
   height;
+  speed;
 
   constructor(x, y, width, height) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
+    this.speed = 10;
   }
 
   getX() {
@@ -27,7 +29,11 @@ export class Bar {
     return this.height;
   }
 
-  down() {}
+  down() {
+    this.y += this.speed;
+  }
 
-  up() {}
+  up() {
+    this.y -= this.speed;
+  }
 }

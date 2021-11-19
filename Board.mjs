@@ -19,7 +19,15 @@ export class Board {
     return this.bars;
   }
 
+  getBall() {
+    return this.ball;
+  }
+
   addBar(...bar) {
     this.bars.push(bar);
+  }
+
+  addBall(ball) {
+    this.ball = ball;
   }
 }
